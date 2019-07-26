@@ -1,3 +1,3 @@
 # TinRoof Horse Club
-## Changing the world one hack at a time
+## Saving your hunger, one tweet at a time
 ### Horsies on Wheelies
