@@ -1,1 +1,3 @@
-# NCR_Hackathon_2k19
+# TinRoof Horse Club
+## Changing the world one hack at a time
+### Horsies on Wheelies
