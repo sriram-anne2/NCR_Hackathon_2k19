@@ -4,6 +4,8 @@ import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.ArrayList;
+
 @Data
 @Document(collection = "customer_info")
 public class CustomerInfo {
@@ -15,4 +17,6 @@ public class CustomerInfo {
     private String customerName;
     private String customerPhone;
     private String customerEmail;
+
+    private ArrayList<FavOrders> favOrders;
 }

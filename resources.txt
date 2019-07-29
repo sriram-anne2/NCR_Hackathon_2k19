@@ -1,0 +1,7 @@
+https://stackoverflow.com/questions/25429657/spring-and-mongodb-nested-documents
+
+https://lankydan.dev/2017/05/29/embedded-documents-with-spring-data-and-mongodb
+
+https://stackoverflow.com/questions/17899872/how-to-map-document-with-dynamic-keys-to-a-spring-mongodb-entity-class
+
+https://stackoverflow.com/questions/36793641/mongodb-query-with-spring-data-for-key-value
