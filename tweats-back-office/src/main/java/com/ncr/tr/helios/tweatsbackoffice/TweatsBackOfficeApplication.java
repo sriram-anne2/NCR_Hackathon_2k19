@@ -6,11 +6,13 @@ import com.ncr.tr.helios.tweatsbackoffice.entities.items.Items;
 import com.ncr.tr.helios.tweatsbackoffice.entities.items.ItemsRepository;
 import com.ncr.tr.helios.tweatsbackoffice.entities.orders.Orders;
 import com.ncr.tr.helios.tweatsbackoffice.entities.orders.OrdersRepository;
+import org.apache.catalina.util.CustomObjectInputStream;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 @SpringBootApplication
@@ -41,6 +43,8 @@ public class TweatsBackOfficeApplication implements CommandLineRunner {
         Items items2 = new Items();
         Items items3 = new Items();
         Items items4 = new Items();
+        Items items5 = new Items();
+        Items items6 = new Items();
 
         Orders orders = new Orders();
 
@@ -48,7 +52,14 @@ public class TweatsBackOfficeApplication implements CommandLineRunner {
         FavOrders favOrders1 = new FavOrders();
         FavOrders favOrders2 = new FavOrders();
 
-        // Adding 4 items to our inventory
+        CustomerInfo customer2 = new CustomerInfo();
+        FavOrders favOrders3 = new FavOrders();
+        //FavOrders favOrders2 = new FavOrders();
+
+        CustomerInfo customer3 = new CustomerInfo();
+        FavOrders favOrders4 = new FavOrders();
+
+        // Adding 6 items to our inventory
         items1.setItemId("1");
         items1.setItemName("pizza");
         items1.setItemPrice(5.00);
@@ -61,6 +72,12 @@ public class TweatsBackOfficeApplication implements CommandLineRunner {
         items4.setItemId("4");
         items4.setItemName("milkshake");
         items4.setItemPrice(2.75);
+        items5.setItemId("5");
+        items5.setItemName("hamburger");
+        items5.setItemPrice(4.50);
+        items6.setItemId("6");
+        items6.setItemName("cake");
+        items6.setItemPrice(3.00);
 
         // setting pizza, brownie and milkshake as fav1
         favOrders1.setEmojiUnicode("pizzaunicode + brownieunicode + milkshakeunicode");
@@ -77,10 +94,25 @@ public class TweatsBackOfficeApplication implements CommandLineRunner {
         favOrderItems2.add(items3);
         favOrders2.setFavOrderItems(favOrderItems2);
 
+        //setting cake and burger as fav3
+        favOrders3.setEmojiUnicode("cakeunicode + burgerunicode");
+        ArrayList<Items> favOrderItems3 = new ArrayList<>();
+        favOrderItems3.add(items6);
+        favOrderItems3.add(items5);
+        favOrders3.setFavOrderItems(favOrderItems3);
+
+        favOrders4.setEmojiUnicode("pizza");
+        ArrayList<Items> favOrderItems4 = new ArrayList<>();
+
         // adding both favorites to an array list to be added as a fav order list to each customer
         ArrayList<FavOrders> cust1FavOrders = new ArrayList<>();
         cust1FavOrders.add(favOrders1);
         cust1FavOrders.add(favOrders2);
+
+        ArrayList<FavOrders> cust2FavOrders = new ArrayList<>();
+        cust2FavOrders.add(favOrders3);
+        cust2FavOrders.add(favOrders2);
+
 
 
         //Setting customer information
