@@ -1,11 +1,12 @@
 package com.ncr.tr.helios.tweatsbackoffice.entities.orders;
 
-import com.ncr.tr.helios.tweatsbackoffice.entities.items.Items;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-
-import java.util.ArrayList;
 
 @Document(collection = "orders")
 @Data
@@ -20,7 +21,7 @@ public class Orders {
 
     // This is the customerTwitterHandle in CustomerInfo.java
     private String orderedBy;
-    private ArrayList<Items> orderItems;
+    private String orderDescription;
 
 
 }

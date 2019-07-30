@@ -22,5 +22,5 @@ public class CustomerInfo {
     private String customerPhone;
     private String customerEmail;
 
-    private ArrayList<FavOrders> favOrders;
+    private ArrayList<String> favOrders;
 }
