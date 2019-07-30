@@ -30,7 +30,10 @@ public class ProcessorImpl implements Processor {
         for(FavOrders favOrders: c1.getFavOrders()) {
 
             if(emojiUnicode.equalsIgnoreCase(favOrders.getEmojiUnicode())) {
-                return orderService.addOrders(favOrders.getFavOrderDescription(), twitterHandle);
+                Orders order = new Orders();
+                order.setOrderDescription(favOrders.getFavOrderDescription());
+                order.setOrderedBy(c1.getCustomerTwitterHandle());
+                return orderService.addOrders(order);
                 // in addOrders we call save method for db.
             }
         }

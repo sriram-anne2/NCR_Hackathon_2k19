@@ -14,21 +14,20 @@ import java.net.URI;
 public class OrdersResource {
 
 
-    @Autowired private Processor processor;
-    @Autowired private OrdersRepository ordersRepository;
+    @Autowired
+    private Processor processor;
+    @Autowired
+    private OrdersRepository ordersRepository;
+
     @PostMapping("/orders")
     public ResponseEntity<Orders> createOrder(@RequestBody OrderRequest orderRequest) {
 
         Orders actualOrder = processor.processRequestForOrder(orderRequest.getTwitterHandle(), orderRequest.getEmojiCode());
 
-        if(actualOrder != null) {
-            actualOrder = ordersRepository.save(actualOrder);
-
-            URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{actualOrder}").buildAndExpand(actualOrder).toUri();
-
+        if (actualOrder != null) {
+            URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(actualOrder.getOrderId()).toUri();
             return ResponseEntity.created(location).build();
-        }
-        else {
+        } else {
             return ResponseEntity.badRequest().build();
         }
     }

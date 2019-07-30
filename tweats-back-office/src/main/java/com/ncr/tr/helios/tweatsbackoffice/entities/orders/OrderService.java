@@ -5,5 +5,5 @@ public interface OrderService {
 
     Orders getOrdersByTwitterHandle(String twitterHandle);
 
-    Orders addOrders(String favOrderDescription, String twitterHandle);
+    Orders addOrders(Orders order);
 }
