@@ -1,7 +1,7 @@
 package com.ncr.tr.helios.tweatsbackoffice;
 
-import com.ncr.tr.helios.tweatsbackoffice.customer.Customer;
-import com.ncr.tr.helios.tweatsbackoffice.customer.CustomerRepository;
+import com.ncr.tr.helios.tweatsbackoffice.entities.customer.CustomerRepository;
+import com.ncr.tr.helios.tweatsbackoffice.entities.orders.OrdersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -11,7 +11,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class TweatsBackOfficeApplication implements CommandLineRunner {
 
     @Autowired
-    CustomerRepository repository;
+    CustomerRepository customerRepository;
+
+
+    @Autowired
+    OrdersRepository ordersRepository;
 
     public static void main(String[] args) {
         SpringApplication.run(TweatsBackOfficeApplication.class, args);
@@ -20,21 +24,13 @@ public class TweatsBackOfficeApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
+        // Database initialization I guess? clearing all previous states?
+        customerRepository.deleteAll();
+        ordersRepository.deleteAll();
 
-        repository.deleteAll();
 
-        Customer c1 = new Customer();
-        Customer c2 = new Customer();
-
-        c1.setName("Asheton Harrell");
-
-        c2.setName("Ram Anne");
-
-        repository.save(c1);
-        repository.save(c2);
-
-        System.out.println("Here are saved customers");
-        repository.findAll().stream().forEach(System.out::println);
+        //now lets see if it works
+        customerRepository.findAll().forEach(System.out::println);
 
     }
 
