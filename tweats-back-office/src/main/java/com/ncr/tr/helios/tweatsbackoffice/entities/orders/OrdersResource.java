@@ -16,8 +16,6 @@ public class OrdersResource {
 
     @Autowired
     private Processor processor;
-    @Autowired
-    private OrdersRepository ordersRepository;
 
     @PostMapping("/orders")
     public ResponseEntity<Orders> createOrder(@RequestBody OrderRequest orderRequest) {
