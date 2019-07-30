@@ -1,13 +1,7 @@
 version: '3'
 
-<<<<<<< HEAD
-services:
-  mongo_db:
-=======
-
 services:
   mongo-db:
->>>>>>> 844866677727d27ee6b8291f43e2fa49b5bff080
     image: mongo
     ports:
       - "27017:27017"
