@@ -22,7 +22,7 @@ public class OrdersResource {
     @PostMapping("/orders")
     public ResponseEntity<Orders> createOrder(@RequestBody OrderRequest orderRequest) {
 
-        Orders actualOrder = processor.processRequestForOrder(orderRequest.getTwitterHandle(), orderRequest.getEmojiCode());
+        Orders actualOrder = processor.processRequestForOrder(orderRequest.getEmojiCode(), orderRequest.getTwitterHandle());
 
         if (actualOrder != null) {
             URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(actualOrder.getOrderId()).toUri();
