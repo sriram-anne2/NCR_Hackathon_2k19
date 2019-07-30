@@ -4,5 +4,5 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 public interface CustomerRepository extends MongoRepository<CustomerInfo, String> {
 
-    CustomerInfo findAllByCustomerTwitterHandle(String twitterhandle);
+    CustomerInfo findByCustomerTwitterHandle(String twitterhandle);
 }

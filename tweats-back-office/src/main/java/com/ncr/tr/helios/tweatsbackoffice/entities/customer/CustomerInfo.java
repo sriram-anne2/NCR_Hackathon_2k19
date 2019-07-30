@@ -5,6 +5,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Document(collection = "customer_info")
 @Data
@@ -22,5 +23,5 @@ public class CustomerInfo {
     private String customerPhone;
     private String customerEmail;
 
-    private ArrayList<String> favOrders;
+    private List<FavOrders> favOrders;
 }
