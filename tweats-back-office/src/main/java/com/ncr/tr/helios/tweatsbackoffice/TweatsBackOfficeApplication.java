@@ -101,8 +101,11 @@ public class TweatsBackOfficeApplication implements CommandLineRunner {
         favOrderItems3.add(items5);
         favOrders3.setFavOrderItems(favOrderItems3);
 
+        // settting pizza as fav4
         favOrders4.setEmojiUnicode("pizza");
         ArrayList<Items> favOrderItems4 = new ArrayList<>();
+        favOrderItems4.add(items1);
+        favOrders4.setFavOrderItems(favOrderItems4);
 
         // adding both favorites to an array list to be added as a fav order list to each customer
         ArrayList<FavOrders> cust1FavOrders = new ArrayList<>();
@@ -112,6 +115,9 @@ public class TweatsBackOfficeApplication implements CommandLineRunner {
         ArrayList<FavOrders> cust2FavOrders = new ArrayList<>();
         cust2FavOrders.add(favOrders3);
         cust2FavOrders.add(favOrders2);
+
+        ArrayList<FavOrders> cust3FavOrders = new ArrayList<>();
+        cust3FavOrders.add(favOrders4);
 
 
 
@@ -123,12 +129,30 @@ public class TweatsBackOfficeApplication implements CommandLineRunner {
         customer1.setCustomerPhone("404-409-9193");
         customer1.setFavOrders(cust1FavOrders);
 
+        customer2.setCustomerTwitterHandle("@badPingPongZach");
+        customer2.setCustomerEmail("zachary@gmail.com");
+        customer2.setCustomerId("4190");
+        customer2.setCustomerName("Zachary Maciejiewski");
+        customer2.setCustomerPhone("1-800-209-9876");
+        customer2.setFavOrders(cust2FavOrders);
+
+        customer3.setCustomerTwitterHandle("@smellysnaffinturtle12");
+        customer3.setCustomerEmail("asheton.harrell@gmail.com");
+        customer3.setCustomerId("3066");
+        customer3.setCustomerName("Asheton Harrel");
+        customer3.setCustomerPhone("404-404-4040");
+        customer3.setFavOrders(cust3FavOrders);
+
         // saving all entries till now
         itemsRepository.save(items1);
         itemsRepository.save(items2);
         itemsRepository.save(items3);
         itemsRepository.save(items4);
+        itemsRepository.save(items5);
+        itemsRepository.save(items6);
         customerRepository.save(customer1);
+        customerRepository.save(customer2);
+        customerRepository.save(customer3);
 
         //now lets see if it works
         customerRepository.findAll().forEach(System.out::println);
