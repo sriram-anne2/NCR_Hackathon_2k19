@@ -1,0 +1,247 @@
+{
+	"info": {
+		"_postman_id": "a19ab856-1c37-43c5-a847-af7678a31319",
+		"name": "Twitter",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get tweets for specific account",
+			"request": {
+				"auth": {
+					"type": "oauth1",
+					"oauth1": [
+						{
+							"key": "addParamsToHeader",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "tokenSecret",
+							"value": "ll1YUM63Ou0TDtZjfKzhuHVwMdyrzbIVOKz2NzwOsuUjq",
+							"type": "string"
+						},
+						{
+							"key": "token",
+							"value": "1155859007061540867-5oxIGqF8nTe8Cj9W2fDDYLyt8npXcg",
+							"type": "string"
+						},
+						{
+							"key": "consumerSecret",
+							"value": "7r4Mcr1X4IU9bnPTUCZK0XUA952Wm7fpy2z0dNoVaANFbLWJqw",
+							"type": "string"
+						},
+						{
+							"key": "consumerKey",
+							"value": "3pPUFTe5Rvfm1AwkXqZjEN3hN",
+							"type": "string"
+						},
+						{
+							"key": "signatureMethod",
+							"value": "HMAC-SHA1",
+							"type": "string"
+						},
+						{
+							"key": "version",
+							"value": "1.0",
+							"type": "string"
+						},
+						{
+							"key": "addEmptyParamsToSign",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.twitter.com/1.1/search/tweets.json?q=m_ryan02",
+					"protocol": "https",
+					"host": [
+						"api",
+						"twitter",
+						"com"
+					],
+					"path": [
+						"1.1",
+						"search",
+						"tweets.json"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "m_ryan02"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "verify_credentials",
+			"request": {
+				"auth": {
+					"type": "oauth1",
+					"oauth1": [
+						{
+							"key": "tokenSecret",
+							"value": "ll1YUM63Ou0TDtZjfKzhuHVwMdyrzbIVOKz2NzwOsuUjq",
+							"type": "string"
+						},
+						{
+							"key": "token",
+							"value": "1155859007061540867-5oxIGqF8nTe8Cj9W2fDDYLyt8npXcg",
+							"type": "string"
+						},
+						{
+							"key": "consumerSecret",
+							"value": "7r4Mcr1X4IU9bnPTUCZK0XUA952Wm7fpy2z0dNoVaANFbLWJqw",
+							"type": "string"
+						},
+						{
+							"key": "consumerKey",
+							"value": "3pPUFTe5Rvfm1AwkXqZjEN3hN",
+							"type": "string"
+						},
+						{
+							"key": "signatureMethod",
+							"value": "HMAC-SHA1",
+							"type": "string"
+						},
+						{
+							"key": "version",
+							"value": "1.0",
+							"type": "string"
+						},
+						{
+							"key": "addParamsToHeader",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "addEmptyParamsToSign",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.twitter.com/oauth/authenticate",
+					"protocol": "https",
+					"host": [
+						"api",
+						"twitter",
+						"com"
+					],
+					"path": [
+						"oauth",
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "send tweet",
+			"request": {
+				"auth": {
+					"type": "oauth1",
+					"oauth1": [
+						{
+							"key": "addParamsToHeader",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "tokenSecret",
+							"value": "ll1YUM63Ou0TDtZjfKzhuHVwMdyrzbIVOKz2NzwOsuUjq",
+							"type": "string"
+						},
+						{
+							"key": "token",
+							"value": "1155859007061540867-5oxIGqF8nTe8Cj9W2fDDYLyt8npXcg",
+							"type": "string"
+						},
+						{
+							"key": "consumerSecret",
+							"value": "7r4Mcr1X4IU9bnPTUCZK0XUA952Wm7fpy2z0dNoVaANFbLWJqw",
+							"type": "string"
+						},
+						{
+							"key": "consumerKey",
+							"value": "3pPUFTe5Rvfm1AwkXqZjEN3hN",
+							"type": "string"
+						},
+						{
+							"key": "signatureMethod",
+							"value": "HMAC-SHA1",
+							"type": "string"
+						},
+						{
+							"key": "version",
+							"value": "1.0",
+							"type": "string"
+						},
+						{
+							"key": "addEmptyParamsToSign",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "status",
+							"value": "Hello, Kevin.",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api.twitter.com/1.1/statuses/update.json",
+					"protocol": "https",
+					"host": [
+						"api",
+						"twitter",
+						"com"
+					],
+					"path": [
+						"1.1",
+						"statuses",
+						"update.json"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "Hello, Kevin",
+							"disabled": true
+						}
+					]
+				},
+				"description": "Post tweets"
+			},
+			"response": []
+		}
+	]
+}
