@@ -59,7 +59,8 @@
 						"key": "Content-Type",
 						"name": "Content-Type",
 						"value": "application/x-www-form-urlencoded",
-						"type": "text"
+						"type": "text",
+						"disabled": true
 					}
 				],
 				"url": {
@@ -79,6 +80,11 @@
 						{
 							"key": "q",
 							"value": "m_ryan02"
+						},
+						{
+							"key": "%20%23",
+							"value": "WilsonTacos",
+							"disabled": true
 						}
 					]
 				}
@@ -86,57 +92,40 @@
 			"response": []
 		},
 		{
-			"name": "verify_credentials",
+			"name": "Get tweets by hashtag",
 			"request": {
 				"auth": {
-					"type": "oauth1",
-					"oauth1": [
+					"type": "oauth2",
+					"oauth2": [
 						{
-							"key": "tokenSecret",
-							"value": "ll1YUM63Ou0TDtZjfKzhuHVwMdyrzbIVOKz2NzwOsuUjq",
+							"key": "accessToken",
+							"value": "AAAAAAAAAAAAAAAAAAAAAKtw%2FQAAAAAApeJyn%2BtvVgcUlrV0C1FwcA4e7WY%3DyRUwgeLdUSOFOuAnpM1m58BcuolBjHCc7w8NGShmONyOku6L36",
 							"type": "string"
 						},
 						{
-							"key": "token",
-							"value": "1155859007061540867-5oxIGqF8nTe8Cj9W2fDDYLyt8npXcg",
+							"key": "addTokenTo",
+							"value": "header",
 							"type": "string"
-						},
-						{
-							"key": "consumerSecret",
-							"value": "7r4Mcr1X4IU9bnPTUCZK0XUA952Wm7fpy2z0dNoVaANFbLWJqw",
-							"type": "string"
-						},
-						{
-							"key": "consumerKey",
-							"value": "3pPUFTe5Rvfm1AwkXqZjEN3hN",
-							"type": "string"
-						},
-						{
-							"key": "signatureMethod",
-							"value": "HMAC-SHA1",
-							"type": "string"
-						},
-						{
-							"key": "version",
-							"value": "1.0",
-							"type": "string"
-						},
-						{
-							"key": "addParamsToHeader",
-							"value": false,
-							"type": "boolean"
-						},
-						{
-							"key": "addEmptyParamsToSign",
-							"value": false,
-							"type": "boolean"
 						}
 					]
 				},
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "",
+						"disabled": true
+					}
+				],
 				"url": {
-					"raw": "https://api.twitter.com/oauth/authenticate",
+					"raw": "https://api.twitter.com/1.1/search/tweets.json?q=%23Tweet2Order",
 					"protocol": "https",
 					"host": [
 						"api",
@@ -144,8 +133,15 @@
 						"com"
 					],
 					"path": [
-						"oauth",
-						"authenticate"
+						"1.1",
+						"search",
+						"tweets.json"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "%23Tweet2Order"
+						}
 					]
 				}
 			},
@@ -213,7 +209,7 @@
 					"urlencoded": [
 						{
 							"key": "status",
-							"value": "Hello, Kevin.",
+							"value": "U+1F4AA",
 							"type": "text"
 						}
 					]
@@ -240,6 +236,113 @@
 					]
 				},
 				"description": "Post tweets"
+			},
+			"response": []
+		},
+		{
+			"name": "Get tweets by merchantHandle and hashtag",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "AAAAAAAAAAAAAAAAAAAAAKtw%2FQAAAAAApeJyn%2BtvVgcUlrV0C1FwcA4e7WY%3DyRUwgeLdUSOFOuAnpM1m58BcuolBjHCc7w8NGShmONyOku6L36",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"url": {
+					"raw": "https://api.twitter.com/1.1/search/tweets.json?q=%40WilsonTacos%20%23Tweet2Order&count=100",
+					"protocol": "https",
+					"host": [
+						"api",
+						"twitter",
+						"com"
+					],
+					"path": [
+						"1.1",
+						"search",
+						"tweets.json"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "%40WilsonTacos%20%23Tweet2Order"
+						},
+						{
+							"key": "count",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "oauth2",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "7r4Mcr1X4IU9bnPTUCZK0XUA952Wm7fpy2z0dNoVaANFbLWJqw",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "3pPUFTe5Rvfm1AwkXqZjEN3hN",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api.twitter.com/oauth2/token",
+					"protocol": "https",
+					"host": [
+						"api",
+						"twitter",
+						"com"
+					],
+					"path": [
+						"oauth2",
+						"token"
+					]
+				}
 			},
 			"response": []
 		}
