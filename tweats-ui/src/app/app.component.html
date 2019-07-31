@@ -1,12 +1,12 @@
 <table style="width:100%">
-<th>Order Id</th>
-<th>Order Description</th>
-<th>Ordered By</th>
-<th>Order Price</th>
-<tr *ngFor="let order of orderArray">
-  <td>{{ order.orderId }}</td>
-  <td>{{ order.rderDescription }}</td>
-  <td>{{ order.orderedBy }}</td>
-  <td>{{ order.orderPrice }}</td>
-</tr>
+  <th>Order Id</th>
+  <th>Order Description</th>
+  <th>Ordered By</th>
+  <th>Order Price</th>
+  <tr *ngFor="let order of orderArray">
+    <td>{{ order.orderId }}</td>
+    <td>{{ order.orderDescription }}</td>
+    <td>{{ order.orderedBy }}</td>
+    <td>{{ order.orderTotalPrice }}</td>
+  </tr>
 </table>

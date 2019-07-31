@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {HttpClientModule} from '@angular/common/http';
 import { Order } from './order';
 import { OrderService } from './order.service';
 
@@ -13,10 +12,10 @@ export class AppComponent {
   title = 'tweats-ui';
   orderArray: Order[];
 
-  constructor(private httpClient: HttpClientModule, private orderService: OrderService) {
+  constructor(private orderService: OrderService) { }
 
-  }
-  ngOnit() {
+  ngOnInit() {
+    console.log('component.ts')
     this.orderService.getOrders().subscribe(orders => this.orderArray = orders);
   }
 }

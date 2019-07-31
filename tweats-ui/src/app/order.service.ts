@@ -15,6 +15,7 @@ export class OrderService {
   constructor(private http: HttpClient) { }
 
   getOrders() : Observable<Order[]> {
+    console.log('getOrders()');
     return this.http.get<Order[]>('http://localhost:8080/orders');
   }
 }
