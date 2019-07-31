@@ -5,6 +5,7 @@ import com.ncr.tr.helios.tweatsbackoffice.entities.customer.CustomerService;
 import com.ncr.tr.helios.tweatsbackoffice.entities.customer.FavOrders;
 import com.ncr.tr.helios.tweatsbackoffice.entities.orders.OrderService;
 import com.ncr.tr.helios.tweatsbackoffice.entities.orders.Orders;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
@@ -31,6 +32,11 @@ public class ProcessorImpl implements Processor {
     @Override
     public Orders processRequestForOrder(String emojiUnicode, String twitterHandle) throws MessagingException {
         // check customer service
+
+        if(StringUtils.isBlank(emojiUnicode) || StringUtils.isBlank(twitterHandle)) {
+            return null;
+        }
+
         CustomerInfo c1 = customerService.getCustomerByHandle(twitterHandle);
 
         // if valid create order w/ order service.
@@ -49,15 +55,6 @@ public class ProcessorImpl implements Processor {
                 }
                 return finalOrder;
                 // in addOrders we call save method for db.
-            } else {
-                Orders order = new Orders();
-                order.setOrderDescription("");
-                order.setOrderedBy("");
-                order.setOrderTotalPrice(0);
-                Orders finalOrder = orderService.addOrders(order);
-                sendEmailConfirmation(c1.getCustomerName());
-
-                return finalOrder;
             }
         }
 

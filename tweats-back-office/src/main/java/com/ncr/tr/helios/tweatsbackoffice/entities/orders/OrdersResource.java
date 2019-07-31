@@ -37,7 +37,7 @@ public class OrdersResource {
 
             return responseEntity;
         } else {
-            return ResponseEntity.badRequest().build();
+            return ResponseEntity.badRequest().body(actualOrder);
         }
     }
 
