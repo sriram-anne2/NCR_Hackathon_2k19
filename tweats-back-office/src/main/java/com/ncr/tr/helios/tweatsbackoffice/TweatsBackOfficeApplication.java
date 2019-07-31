@@ -43,6 +43,7 @@ public class TweatsBackOfficeApplication implements CommandLineRunner {
         FavOrders favOrders1 = new FavOrders();
         favOrders1.setEmojiUnicode("saladUnicode + chickenUnicode");
         favOrders1.setFavOrderDescription("Garden Salad with greek dressing, red onions, spinach, and chicken");
+        favOrders1.setFavOrderTotalPrice(11.00);
         List<FavOrders> favOrdersList = new ArrayList<>();
         favOrdersList.add(favOrders1);
         c1.setFavOrders(favOrdersList);

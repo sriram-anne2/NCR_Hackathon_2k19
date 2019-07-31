@@ -22,6 +22,7 @@ public class Orders {
     // This is the customerTwitterHandle in CustomerInfo.java
     private String orderedBy;
     private String orderDescription;
+    private double orderTotalPrice;
 
 
 }

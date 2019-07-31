@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.mail.MessagingException;
 import java.net.URI;
 import java.util.List;
 
@@ -23,7 +24,7 @@ public class OrdersResource {
     private OrdersRepository ordersRepository;
 
     @PostMapping("/orders")
-    public ResponseEntity<Orders> createOrder(@RequestBody OrderRequest orderRequest) {
+    public ResponseEntity<Orders> createOrder(@RequestBody OrderRequest orderRequest) throws MessagingException {
 
         Orders actualOrder = processor.processRequestForOrder(orderRequest.getEmojiCode(), orderRequest.getTwitterHandle());
 

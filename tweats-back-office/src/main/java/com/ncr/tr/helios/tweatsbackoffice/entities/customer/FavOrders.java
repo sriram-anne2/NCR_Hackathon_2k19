@@ -11,4 +11,5 @@ public class FavOrders {
 
     private String emojiUnicode;
     private String favOrderDescription;
+    private double favOrderTotalPrice;
 }
