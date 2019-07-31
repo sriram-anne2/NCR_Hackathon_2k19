@@ -25,9 +25,11 @@ public class OrdersResource {
 
     @PostMapping("/orders")
     public ResponseEntity<Orders> createOrder(@RequestBody OrderRequest orderRequest) throws MessagingException {
+        Orders actualOrder = null;
 
-        Orders actualOrder = processor.processRequestForOrder(orderRequest.getEmojiCode(), orderRequest.getTwitterHandle());
-
+        if (orderRequest != null) {
+            actualOrder = processor.processRequestForOrder(orderRequest.getEmojiCode(), orderRequest.getTwitterHandle());
+        }
         if (actualOrder != null) {
             URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(actualOrder.getOrderId()).toUri();
             return ResponseEntity.created(location).build();
