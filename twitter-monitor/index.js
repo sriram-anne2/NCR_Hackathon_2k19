@@ -40,7 +40,7 @@ function postOrder(url, screenName, emojis, id) {
 			sendDirectMessage(id, msg);
 		})
 		.catch(function(error) {
-			const msg = "We're sorry, but we were unable to locate that order.  Have you set this order as a favorite?";
+			const msg = "We're sorry, but we were unable to locate that order.  Have you set this order as a favorite? If not head to http://ncrsilverplus.com/account/setFavorites";
 			sendDirectMessage(id, msg);
 			console.log(error);
 		});
