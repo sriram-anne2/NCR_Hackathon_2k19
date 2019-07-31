@@ -7,10 +7,10 @@ const twit = require('twit');
 const axios = require('axios');
 
 let t = new twit({
-	consumer_key: '3pPUFTe5Rvfm1AwkXqZjEN3hN',
-	consumer_secret: '7r4Mcr1X4IU9bnPTUCZK0XUA952Wm7fpy2z0dNoVaANFbLWJqw',
-	access_token: '1155859007061540867-5oxIGqF8nTe8Cj9W2fDDYLyt8npXcg',
-	access_token_secret: 'll1YUM63Ou0TDtZjfKzhuHVwMdyrzbIVOKz2NzwOsuUjq',
+	consumer_key: 'ENTER_CONSUMER_KEY_HERE',
+	consumer_secret: 'ENTER_CONSUMER_SECRET_HERE',
+	access_token: 'ENTER_ACCESS_TOKEN',
+	access_token_secret: 'ENTER_ACCESS_TOKEN_SECRET',
 	timeout_ms: 60 * 1000, // optional HTTP request timeout to apply to all requests.
 	strictSSL: true // optional - requires SSL certificates to be valid.
 });
