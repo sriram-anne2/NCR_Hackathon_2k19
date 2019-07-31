@@ -33,6 +33,9 @@ public class ProcessorImpl implements Processor {
         // check customer service
         CustomerInfo c1 = customerService.getCustomerByHandle(twitterHandle);
 
+        if(emojiUnicode == null || twitterHandle == null) {
+            return null;
+        }
         // if valid create order w/ order service.
 
         for (FavOrders favOrders : c1.getFavOrders()) {
@@ -49,15 +52,6 @@ public class ProcessorImpl implements Processor {
                 }
                 return finalOrder;
                 // in addOrders we call save method for db.
-            } else {
-                Orders order = new Orders();
-                order.setOrderDescription("");
-                order.setOrderedBy("");
-                order.setOrderTotalPrice(0);
-                Orders finalOrder = orderService.addOrders(order);
-                sendEmailConfirmation(c1.getCustomerName());
-
-                return finalOrder;
             }
         }
 
