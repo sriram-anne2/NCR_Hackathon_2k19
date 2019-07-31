@@ -6,4 +6,5 @@ public interface Processor {
 
 
     Orders processRequestForOrder(String emojiUnicode, String twitterHandle);
+
 }

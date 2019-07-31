@@ -3,12 +3,14 @@ package com.ncr.tr.helios.tweatsbackoffice.entities.orders;
 import com.ncr.tr.helios.tweatsbackoffice.entities.processor.Processor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
+import java.util.List;
 
 @RestController
 public class OrdersResource {
@@ -16,6 +18,9 @@ public class OrdersResource {
 
     @Autowired
     private Processor processor;
+
+    @Autowired
+    private OrdersRepository ordersRepository;
 
     @PostMapping("/orders")
     public ResponseEntity<Orders> createOrder(@RequestBody OrderRequest orderRequest) {
@@ -28,5 +33,11 @@ public class OrdersResource {
         } else {
             return ResponseEntity.badRequest().build();
         }
+    }
+
+
+    @GetMapping("/orders")
+    public List<Orders> retrieveOrders() {
+        return ordersRepository.findAll();
     }
 }
