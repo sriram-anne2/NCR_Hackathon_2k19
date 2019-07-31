@@ -1,0 +1,16 @@
+{
+  "name": "twitter-monitor",
+  "version": "1.0.0",
+  "description": "Monitor a Twitter feed for orders",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "twit": "^2.2.11"
+  }
+}
