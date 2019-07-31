@@ -1,3 +1,2 @@
-# TinRoof Horse Club
-## Saving your hunger, one tweet at a time
-### Horsies on Wheelies
+# NCR Silver Plus
+Enables customer ordering via Twitter with #tweet2order.  Integrates with NCR Silver Commerce.
