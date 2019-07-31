@@ -39,6 +39,8 @@ public class ProcessorImpl implements Processor {
 
         CustomerInfo c1 = customerService.getCustomerByHandle(twitterHandle);
 
+
+
         // if valid create order w/ order service.
 
         for (FavOrders favOrders : c1.getFavOrders()) {
@@ -57,7 +59,11 @@ public class ProcessorImpl implements Processor {
                 // in addOrders we call save method for db.
             }
         }
-
+        try {
+            sendEmailConfirmation(c1.getCustomerName());
+        } catch (MessagingException e) {
+            e.printStackTrace();
+        }
         return null;
     }
 
