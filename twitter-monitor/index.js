@@ -20,7 +20,7 @@ let stream = t.stream('statuses/filter', { track: ORDER_HASHTAG });
 stream.on('tweet', function(tweet) {
 	let emojis;
 	console.log(tweet);
-	if (getEmojis(tweet.text) === '🥗🍗') {
+	if (getEmojis(tweet.text) === '🥗🐔') {
 		emojis = VALID_EMOJIS_PAYLOAD;
 	} else {
 		emojis = INVALID_EMOJIS_PAYLOAD;
